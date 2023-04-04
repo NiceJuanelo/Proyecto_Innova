@@ -1,6 +1,6 @@
-import "quasar/dist/quasar.css";
-import lang from "quasar/lang/es.js";
-import "@quasar/extras/material-icons/material-icons.css";
+import 'quasar/dist/quasar.css';
+import lang from 'quasar/lang/es.js';
+import '@quasar/extras/material-icons/material-icons.css';
 
 // To be used on app.use(Quasar, { ... })
 export default {
