@@ -4,7 +4,7 @@
     class="card"
   >
     <q-card-section
-      class="q-pa-none section bg-black"
+      class="q-pa-none section"
       vertical
     >
       <q-img
@@ -19,7 +19,6 @@
     <q-img
       class="img-logo"
       :src="logoApp"
-      width="400px"
     />
   </q-card>
 </template>
@@ -32,6 +31,7 @@
 }
 .section {
   display: flex;
+  background-color: #000000;
   flex-direction: column;
   z-index: 6;
 }
@@ -39,8 +39,9 @@
 .img-logo {
   position: absolute;
   z-index: 10;
-  top: calc(25vh / 2);
-  right: calc(12.5% / 2);
+  top: calc(100vh / 6.5);
+  width: calc(100vh / 1.8);
+  right: calc(25% / 2.5);
 }
 </style>
 
