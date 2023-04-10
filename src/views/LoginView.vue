@@ -19,7 +19,7 @@
     </q-toolbar>
   </q-header>
 
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center fondo">
     <div class="container">
       <div class="align-items-center">
         <div class="col-md-10">
@@ -31,14 +31,17 @@
         </div>
       </div>
       <div class="">
-        <q-card style="width: 400px">
-          <q-card-section></q-card-section>
+        <q-card
+          style="width: 400px; background-color: transparent"
+          flat
+        >
           <q-separator inset />
           <q-card-section class="q-mt-sm">
             <q-form>
               <q-input
                 v-model="user"
                 type="text"
+                color="orange"
                 label="Usuario"
                 placeholder="Ingresar el usuario"
                 class="q-mb-sm"
@@ -53,6 +56,7 @@
               <q-input
                 v-model="password"
                 label="Contraseña"
+                color="orange"
                 placeholder="Ingresa la contraseña del usuario"
                 outlined
                 :type="show"
@@ -98,6 +102,10 @@
 <style scoped>
 .tolbar1 {
   background: linear-gradient(to right, #ffdb58, #ffba53, #ffba53, #ff924d);
+}
+.fondo {
+  background-image: url('../assets/Fondo.png');
+  background-size: cover;
 }
 </style>
 
