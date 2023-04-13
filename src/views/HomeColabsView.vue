@@ -23,9 +23,7 @@
       />
       <q-tabs
         v-model="tab"
-        class="text-teal"
         active-color="white"
-        color="white"
       >
         <q-tab icon="notifications" />
       </q-tabs>
@@ -45,7 +43,7 @@
       <q-list padding>
         <q-item
           clickable
-          to="/homeColabs"
+          to="/homeColabs/inicioColabs"
           v-ripple
         >
           <q-item-section avatar>
@@ -58,7 +56,6 @@
         <q-item
           clickable
           to="/homeColabs/galeriaColabs"
-          v-ripple
         >
           <q-item-section avatar>
             <q-icon name="collections" />
@@ -154,35 +151,6 @@
     </q-img>
   </q-drawer>
 
-  <q-page>
-    <div class="">
-      <q-carousel
-        animated
-        v-model="slide"
-        arrows
-        infinite
-        height="20rem"
-      >
-        <q-carousel-slide
-          :name="1"
-          img-src="https://cdn.quasar.dev/img/mountains.jpg"
-        />
-        <q-carousel-slide
-          :name="2"
-          img-src="https://cdn.quasar.dev/img/parallax1.jpg"
-        />
-        <q-carousel-slide
-          :name="3"
-          img-src="https://cdn.quasar.dev/img/parallax2.jpg"
-        />
-        <q-carousel-slide
-          :name="4"
-          img-src="https://cdn.quasar.dev/img/quasar.jpg"
-        />
-      </q-carousel>
-    </div>
-  </q-page>
-
   <q-page-container style="padding: 0">
     <router-view />
   </q-page-container>
@@ -197,5 +165,4 @@
 <script setup>
 import { ref } from 'vue';
 const drawer = ref(false);
-const slide = ref(1);
 </script>

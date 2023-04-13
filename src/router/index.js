@@ -23,6 +23,10 @@ const router = createRouter({
       component: () => import('../views/HomeColabsView.vue'),
       children: [
         {
+          path: 'inicioColabs',
+          component: () => import('../components/InicioColabs.vue'),
+        },
+        {
           path: 'clientesColabs',
 
           component: () => import('../components/ClientesColabs.vue'),
