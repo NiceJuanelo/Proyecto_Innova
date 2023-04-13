@@ -17,6 +17,7 @@
           class="q-mr-xl transparent"
           size="2rem"
           label="Registrarse"
+          @click="emit('mostrarOpciones', true)"
         >
           <q-img
             class="q-ml-md"
@@ -60,4 +61,6 @@
 <script setup>
 import iconAdd from '@/assets/person-add.svg';
 import iconUser from '@/assets/usuario.svg';
+
+const emit = defineEmits(['mostrarOpciones']);
 </script>
