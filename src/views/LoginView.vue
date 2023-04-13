@@ -85,7 +85,7 @@
               label="ENTRAR"
               style="padding: 0 15px 0 15px"
               :disabled="disableBtn"
-              @click.prevent="autenticar"
+              @click="cambioComponente()"
             />
           </q-card-actions>
         </q-card>
@@ -111,6 +111,9 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const user = ref('');
 const password = ref('');
@@ -139,4 +142,7 @@ const disableBtn = computed(() => {
     return true;
   }
 });
+const cambioComponente = () => {
+  router.push('/homeColabs');
+};
 </script>
