@@ -8,6 +8,11 @@ const router = createRouter({
       name: 'welcome',
       component: () => import('../views/WelcomeCard.vue'),
     },
+    {
+      path: '/registro-cliente',
+      name: 'RCliente',
+      component: () => import('../views/RegisterClient.vue')
+    }
   ],
 });
 
