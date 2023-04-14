@@ -22,7 +22,7 @@
                     </template>
                 </q-input>
                 <div class="flex items-center justify-center q-mt-xl">
-                    <q-btn class="btn-submit text-weight-bold" label="Registrarse" type="submit" @click.prevent="mostrarAlgo" :disable="habilitarBtn"/>
+                    <q-btn class="btn-submit text-weight-bold" label="Registrarse" type="submit" @click.prevent="registro" :disable="habilitarBtn"/>
                 </div>
             </q-form>
         </q-card-section>
@@ -60,7 +60,6 @@
 import imgRegister from "@/assets/img-register.svg";
 import { computed, ref, shallowRef } from "vue";
 import { useQuasar } from 'quasar';
-import { useRouter } from "vue-router";
 
 const name = ref('')
 const lastName = ref('')
@@ -70,7 +69,6 @@ const password = ref('')
 const typeInput = shallowRef('password')
 const iconName = shallowRef('visibility_off')
 const $q = useQuasar()
-const router = useRouter()
 
 const cambiarType = () => {
     if(typeInput.value === 'password') {
@@ -82,9 +80,16 @@ const cambiarType = () => {
     }
 }
 
-const mostrarAlgo = () => {
+const registro = async () => {
     if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        router.push('/login-cliente')
+        $q.notify({
+            message: 'Registro exitoso',
+            color: 'green',
+            textColor: 'white',
+            position: 'top',
+            icon: 'emoji_emotions',
+            timeout: 3000
+        })
     } else {
         $q.notify({
             message: 'Correo no valido',

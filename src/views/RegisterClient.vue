@@ -4,7 +4,7 @@
     class="header flex items-center justify-around"
     style="height: 106px"
   >
-    <q-btn class="btn-regresar text-weight-bold" label="Regresar" to="/"/>
+    <q-btn class="btn-regresar text-weight-bold" label="Regresar"/>
     <div class="title text-h3">Registrarse como ususario</div>
     <q-img class="logo" :src="logo" />
   </q-header>

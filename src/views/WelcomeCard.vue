@@ -5,7 +5,7 @@
     <q-dialog v-model="confirm">
       <q-card class="q-pa-xl" style="background-color: rgba(255, 255, 255, 0.2);">
         <q-card-actions align="center" vertical>
-          <q-btn class="button q-mb-xl text-white" rounded label="Registrase como cliente" to="/registro-cliente"/>
+          <q-btn class="button q-mb-xl text-white" rounded label="Registrase como cliente"/>
           <q-btn class="button text-white" rounded label="Registrarse como colaborador"/>
         </q-card-actions>
       </q-card>

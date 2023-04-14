@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh LpR fff">
     <q-page-container>
-      <RouterView />
+      <!-- <RouterView /> -->
     </q-page-container>
   </q-layout>
 </template>
