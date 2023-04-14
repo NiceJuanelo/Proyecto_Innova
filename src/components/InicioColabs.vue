@@ -1,31 +1,29 @@
 <template>
-  <div class="">
-    <q-carousel
-      animated
-      autoplay="true"
-      v-model="slide"
-      arrows
-      infinite
-      height="20rem"
-    >
-      <q-carousel-slide
-        :name="1"
-        img-src="https://cdn.quasar.dev/img/mountains.jpg"
-      />
-      <q-carousel-slide
-        :name="2"
-        img-src="https://cdn.quasar.dev/img/parallax1.jpg"
-      />
-      <q-carousel-slide
-        :name="3"
-        img-src="https://cdn.quasar.dev/img/parallax2.jpg"
-      />
-      <q-carousel-slide
-        :name="4"
-        img-src="https://cdn.quasar.dev/img/quasar.jpg"
-      />
-    </q-carousel>
-  </div>
+  <q-carousel
+    animated
+    autoplay
+    v-model="slide"
+    arrows
+    infinite
+    height="20rem"
+  >
+    <q-carousel-slide
+      :name="1"
+      img-src="https://cdn.quasar.dev/img/mountains.jpg"
+    />
+    <q-carousel-slide
+      :name="2"
+      img-src="https://cdn.quasar.dev/img/parallax1.jpg"
+    />
+    <q-carousel-slide
+      :name="3"
+      img-src="https://cdn.quasar.dev/img/parallax2.jpg"
+    />
+    <q-carousel-slide
+      :name="4"
+      img-src="https://cdn.quasar.dev/img/quasar.jpg"
+    />
+  </q-carousel>
   <q-page class="page2">
     <div class="q-pa-md container">
       <q-card
@@ -82,22 +80,50 @@
 
         <img src="https://cdn.quasar.dev/img/mountains.jpg" />
 
-        <q-card-actions align="right">
-          <q-btn
+        <q-card-actions
+          align="right"
+          style="margin-right: 10px"
+        >
+          <q-rating
+            v-model="like"
+            max="1"
+            size="2em"
+            color="red"
+            color-selected="red-9"
+            icon="favorite_border"
+            icon-selected="favorite"
+            icon-half="favorite"
+            no-dimming
+          />
+          <q-rating
+            v-model="save"
+            max="1"
+            size="2em"
+            color="green-9"
+            color-selected="green-9"
+            icon="bookmark_border"
+            icon-selected="bookmark"
+            icon-half="bookmark_border"
+            no-dimming
+          />
+          <!-- <q-btn
             flat
             round
+            v-model="like"
             color="red"
             icon="favorite"
           />
           <q-btn
             flat
             round
+            v-model="save"
             color="teal"
             icon="bookmark"
-          />
+          /> -->
           <q-btn
             flat
             round
+            v-model="share"
             color="primary"
             icon="share"
           />
@@ -138,4 +164,6 @@ import { ref } from 'vue';
 const slide = ref(1);
 const lorem = 'Mi primer trabajo ya termino me siento agusto de como quedo.';
 const stars = ref();
+const save = ref(false);
+const like = ref(false);
 </script>
