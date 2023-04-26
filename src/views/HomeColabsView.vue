@@ -75,17 +75,6 @@
 
         <q-item
           clickable
-          to="/homeColabs/serviciosColabs"
-          v-ripple
-        >
-          <q-item-section avatar>
-            <q-icon name="design_services" />
-          </q-item-section>
-
-          <q-item-section>Servicios</q-item-section>
-        </q-item>
-        <q-item
-          clickable
           to="/homeColabs/seguridadColabs"
           v-ripple
         >
