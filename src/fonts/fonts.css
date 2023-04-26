@@ -1,4 +1,14 @@
 @font-face {
     font-family: 'jost';
-    src: url('./static/Jost-Regular.ttf') format('truetype');
+    src: url('jost/static/Jost-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kiwi_maru';
+    src: url('kiwi-maru/KiwiMaru-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kanit';
+    src: url('kanit/Kanit-Regular.ttf') format('truetype');
 }
