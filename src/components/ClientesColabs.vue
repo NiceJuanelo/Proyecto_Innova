@@ -15,7 +15,17 @@
             <q-item-label caption>Hola me llamo Pedro y soy un cliente confiable</q-item-label>
           </q-card-section>
           <q-separator vertical />
-          <q-card-section class="text-h8">Calificacion por los demas usuarios</q-card-section>
+          <q-card-section class="text-h8">
+            <q-input
+              label="Escribe tus comentarios aquí"
+              v-model="comentario"
+              dense
+            />
+            <q-btn
+              label="Enviar"
+              @click="enviarComentario()"
+            />
+          </q-card-section>
           <q-separator vertical />
           <q-rating
             v-model="star"
@@ -27,7 +37,7 @@
             no-dimming
           ></q-rating>
           <q-separator vertical />
-          <div class="mi-clase-centrada"><q-btn>Mas información</q-btn></div>
+          <div class="mi-clase-centrada"><q-btn @click="mostrar()">Mas información</q-btn></div>
         </q-card-section>
       </q-card>
       <q-separate />
@@ -47,7 +57,17 @@
             <q-item-label caption>Hola me llamo Juan y me gusta hacer tartos</q-item-label>
           </q-card-section>
           <q-separator vertical />
-          <q-card-section class="text-h8">Calificacion por los demas usuarios</q-card-section>
+          <q-card-section class="text-h8">
+            <q-input
+              label="Escribe tus comentarios aquí"
+              v-model="comentario"
+              dense
+            />
+            <q-btn
+              label="Enviar"
+              @click="enviarComentario()"
+            />
+          </q-card-section>
           <q-separator vertical />
           <q-rating
             v-model="star"
@@ -59,7 +79,7 @@
             no-dimming
           ></q-rating>
           <q-separator vertical />
-          <div class="mi-clase-centrada"><q-btn>Mas información</q-btn></div>
+          <div class="mi-clase-centrada"><q-btn @click="mostrar()">Mas información</q-btn></div>
         </q-card-section>
       </q-card>
     </div>
@@ -78,7 +98,17 @@
             <q-item-label caption>Hola me llamo Karla y soy un cliente responsable</q-item-label>
           </q-card-section>
           <q-separator vertical />
-          <q-card-section class="text-h8">Calificacion por los demas usuarios</q-card-section>
+          <q-card-section class="text-h8">
+            <q-input
+              label="Escribe tus comentarios aquí"
+              v-model="comentario"
+              dense
+            />
+            <q-btn
+              label="Enviar"
+              @click="enviarComentario()"
+            />
+          </q-card-section>
           <q-separator vertical />
           <q-rating
             v-model="star"
@@ -90,7 +120,7 @@
             no-dimming
           ></q-rating>
           <q-separator vertical />
-          <div class="mi-clase-centrada"><q-btn>Mas información</q-btn></div>
+          <div class="mi-clase-centrada"><q-btn @click="mostrar()">Mas información</q-btn></div>
         </q-card-section>
       </q-card>
       <q-separate />
@@ -110,7 +140,17 @@
             <q-item-label caption>Hola me llamo Paul y soy muy amigable</q-item-label>
           </q-card-section>
           <q-separator vertical />
-          <q-card-section class="text-h8">Calificacion por los demas usuarios</q-card-section>
+          <q-card-section class="text-h8">
+            <q-input
+              label="Escribe tus comentarios aquí"
+              v-model="comentario"
+              dense
+            />
+            <q-btn
+              label="Enviar"
+              @click="enviarComentario()"
+            />
+          </q-card-section>
           <q-separator vertical />
           <q-rating
             v-model="star"
@@ -122,12 +162,54 @@
             no-dimming
           ></q-rating>
           <q-separator vertical />
-          <div class="mi-clase-centrada"><q-btn>Mas información</q-btn></div>
+          <div class="mi-clase-centrada"><q-btn @click="mostrar()">Mas información</q-btn></div>
         </q-card-section>
       </q-card>
       <q-separate />
     </div>
   </q-page>
+  <q-dialog v-model="confirm">
+    <q-card>
+      <q-card-section>
+        <q-avatar>
+          <img
+            src="https://cdn.quasar.dev/img/boy-avatar.png"
+            alt="Avatar"
+          />
+        </q-avatar>
+      </q-card-section>
+
+      <q-card-section>
+        <q-input
+          label="Calle"
+          v-model="calle"
+          readonly
+        />
+        <q-input
+          label="Edad"
+          v-model="edad"
+          readonly
+        />
+        <q-input
+          label="Correo electrónico"
+          v-model="correo"
+          readonly
+        />
+        <q-input
+          label="Numero"
+          v-model="numero"
+          readonly
+        />
+      </q-card-section>
+
+      <q-card-actions>
+        <q-btn
+          label="Cerrar"
+          @click="confirm = false"
+        />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
 </template>
 
 <style scoped>
@@ -156,6 +238,28 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useQuasar } from 'quasar';
 
 const star = ref(null);
+const $q = useQuasar();
+const confirm = ref(false);
+const calle = ref('Gardenias #58');
+const edad = ref(35);
+const correo = ref('pedrodoe@gmail.com');
+const numero = ref('3521934518');
+const comentario = ref('');
+
+const enviarComentario = () => {
+  console.log(comentario.value);
+  $q.notify({
+    color: 'blue-grey',
+    message: 'Se envio el comentario',
+    position: 'top',
+    timeout: 1000,
+  });
+};
+
+const mostrar = () => {
+  confirm.value = true;
+};
 </script>
