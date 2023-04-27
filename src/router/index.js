@@ -1,21 +1,62 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: HomeView,
+      path: '/',
+      redirect: '/login',
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue'),
+    },
+    {
+      path: '/registro',
+      name: 'registro',
+      component: () => import('../views/RegistroColabsView.vue'),
+    },
+    {
+      path: '/homeColabs',
+      name: 'homeColabs',
+      component: () => import('../views/HomeColabsView.vue'),
+      children: [
+        {
+          path: 'inicioColabs',
+          component: () => import('../components/InicioColabs.vue'),
+        },
+        {
+          path: 'clientesColabs',
+
+          component: () => import('../components/ClientesColabs.vue'),
+        },
+        {
+          path: 'galeriaColabs',
+
+          component: () => import('../components/GaleriaColabs.vue'),
+        },
+        {
+          path: 'seguridadColabs',
+
+          component: () => import('../components/SeguridadColabs.vue'),
+        },
+        {
+          path: 'serviciosColabs',
+
+          component: () => import('../components/ServiciosColabs.vue'),
+        },
+        {
+          path: 'configuracionColabs',
+
+          component: () => import('../components/ConfiguracionColabs.vue'),
+        },
+        {
+          path: 'ayudaColabs',
+
+          component: () => import('../components/AyudaColabs.vue'),
+        },
+      ],
     },
   ],
 });

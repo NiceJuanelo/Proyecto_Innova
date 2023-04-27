@@ -1,12 +1,11 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
+import { defineConfig } from '@vue/cli-service';
+// eslint-disable-next-line no-undef
+export default defineConfig({
   pluginOptions: {
     quasar: {
       importStrategy: 'kebab',
-      rtlSupport: false
-    }
+      rtlSupport: false,
+    },
   },
-  transpileDependencies: [
-    'quasar'
-  ]
-})
+  transpileDependencies: ['quasar'],
+});
